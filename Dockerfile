@@ -1,6 +1,6 @@
 FROM openjdk:13-jdk-oracle
 
-ENV SONAR_VERSION=7.9.1 \
+ENV SONAR_VERSION=8.0 \
   # Database configuration
   # Defaults to using H2
   SONARQUBE_JDBC_USERNAME=sonar \
@@ -31,11 +31,11 @@ COPY sonar.properties /opt/sonarqube/sonar.properties
 
 # install SonarQube
 WORKDIR /opt
-RUN wget -q -O /opt/sq.zip https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-7.9.1.zip
+RUN wget -q -O /opt/sq.zip https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-8.0.zip
 RUN unzip -q sq.zip \ 
   && rm /opt/sq.zip \
-  && mv /opt/sonarqube-7.9.1/* /opt/sonarqube/ \
-  && rm -r /opt/sonarqube-7.9.1 \
+  && mv /opt/sonarqube-8.0/* /opt/sonarqube/ \
+  && rm -r /opt/sonarqube-8.0 \
   && sed -i 's/wrapper.daemonize=TRUE/wrapper.daemonize=FALSE/g' /opt/sonarqube/bin/linux-x86-64/sonar.sh \
   && chown -R sonarqube:sonarqube /opt/sonarqube*
 
