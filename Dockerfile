@@ -34,8 +34,8 @@ WORKDIR /opt
 RUN wget -q -O /opt/sq.zip https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-8.2.0.32929.zip
 RUN unzip -q sq.zip \ 
   && rm /opt/sq.zip \
-  && mv /opt/sonarqube-developer-8.2.0.32929.zip/* /opt/sonarqube/ \
-  && rm -r /opt/sonarqube-developer-8.2.0.32929.zip \
+  && mv /opt/sonarqube-8.2.0.32929/* /opt/sonarqube/ \
+  && rm -r /opt/sonarqube-8.2.0.32929 \
   && sed -i 's/wrapper.daemonize=TRUE/wrapper.daemonize=FALSE/g' /opt/sonarqube/bin/linux-x86-64/sonar.sh \
   && chown -R sonarqube:sonarqube /opt/sonarqube*
 
