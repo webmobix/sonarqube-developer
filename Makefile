@@ -1,12 +1,12 @@
 
 .PHONE: build
 build:
-	docker build -t webmobix/sonarqube-developer:8.3.1 .
+	docker build -t webmobix/sonarqube-developer:8.4.0 .
 
 .PHONY: tag
 tag:
-	git tag v8.3.1
+	git tag v8.4.0
 
 .PHONY: stack
 stack:
-	docker-compose -d
+	docker-compose up -d
