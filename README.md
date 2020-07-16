@@ -20,5 +20,5 @@ docker run -d \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://postgres/sonar \
-  webmobix/sonarqube-developer:8.4.0
+  webmobix/sonarqube-developer:8.4.1
 ```
